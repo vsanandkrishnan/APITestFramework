@@ -16,43 +16,40 @@ public class RestClient {
 
 	// 1.GET Method
 
-	public void get(String url) throws ClientProtocolException, IOException {
+	public CloseableHttpResponse get(String url) throws ClientProtocolException, IOException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet httpGet = new HttpGet(url);// http Get Request
-		
-		
-		
-        //Status code
+
+		// Status code
 		CloseableHttpResponse httpResponse = httpClient.execute(httpGet);// HIT the Get url
-		int responseStatus = httpResponse.getStatusLine().getStatusCode();
-		System.out.println("Response status--->"
-				+responseStatus);
+//		int responseStatus = httpResponse.getStatusLine().getStatusCode();
+//		System.out.println("Response status--->" + responseStatus);
 
+	
+         
+		return httpResponse;
 		
-		//Json String
-		String responseString = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");// String reponse
-
+		//Status code
+//		int responseStatus = httpResponse.getStatusLine().getStatusCode();
+//		System.out.println("Response status--->" + responseStatus);
+		
+		// Json String
+		//String responseString = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");// String reponse
 		// Converting to JSON
-		JSONObject responseJson= new JSONObject(responseString);
-		System.out.println("reposnse JSON from API--->/n"+ responseJson);
-		
-		
-		// All Header
-		Header[] headerArray=httpResponse.getAllHeaders();
-		
-		HashMap<String, String> allHeaders = new HashMap<String,String>();
-		
-		for(Header header: headerArray) {
-			allHeaders.put(header.getName(), header.getValue());
-			
-		}
-		
-		System.out.println("Headers  array---> "+allHeaders);
-		
-		
-		
-		
-		
+//		JSONObject responseJson = new JSONObject(responseString);
+//		System.out.println("reposnse JSON from API--->/n" + responseJson);
+//
+//		// All Header
+//		Header[] headerArray = httpResponse.getAllHeaders();
+//
+//		HashMap<String, String> allHeaders = new HashMap<String, String>();
+//
+//		for (Header header : headerArray) {
+//			allHeaders.put(header.getName(), header.getValue());
+//
+//		}
+//
+//		System.out.println("Headers  array---> " + allHeaders);
 
 	}
 

@@ -1,10 +1,13 @@
 package com.qa.api.testbase;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
+import org.json.JSONObject;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TestBase {
 
@@ -24,6 +27,21 @@ public class TestBase {
 			e.printStackTrace();
 		}
 
+	}
+	
+	//In Progress
+	public void formatJSON(JSONObject JSON) {
+		
+		String jsonString= JSON.toString();
+		
+		
+//		ObjectMapper mapper = new ObjectMapper();
+//		Object json = mapper.readValue(jsonString, Object.class);
+
+//		String indented =  mapper.defaultPrettyPrintingWriter().writeValueAsString(json);
+
+		
+		
 	}
 	
 	
