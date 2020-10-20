@@ -2,16 +2,21 @@ package com.qa.api.testbase;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
-import org.json.JSONObject;
+import com.qa.api.client.RestClient;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class TestBase {
 
 	public Properties prop;
+	
+	public static int RESPONSE_CODE_200=200;
 
 	public TestBase() {
 		try {
@@ -29,20 +34,20 @@ public class TestBase {
 
 	}
 	
-	//In Progress
-	public void formatJSON(JSONObject JSON) {
-		
-		String jsonString= JSON.toString();
-		
-		
-//		ObjectMapper mapper = new ObjectMapper();
-//		Object json = mapper.readValue(jsonString, Object.class);
-
-//		String indented =  mapper.defaultPrettyPrintingWriter().writeValueAsString(json);
-
+	
+	//To copy the reponse to a file
+	public void copyFile(String response) {
+		try {
+		String path="response\\response.txt";
+		Files.write( Paths.get(path), response.getBytes());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}
+	
+
 	
 	
 

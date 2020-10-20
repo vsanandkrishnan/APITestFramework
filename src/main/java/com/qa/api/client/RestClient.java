@@ -2,6 +2,7 @@ package com.qa.api.client;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.http.Header;
 import org.apache.http.client.ClientProtocolException;
@@ -14,43 +15,28 @@ import org.json.JSONObject;
 
 public class RestClient {
 
-	// 1.GET Method
-
+	//GET Method without headers
 	public CloseableHttpResponse get(String url) throws ClientProtocolException, IOException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet httpGet = new HttpGet(url);// http Get Request
-
-		// Status code
-		CloseableHttpResponse httpResponse = httpClient.execute(httpGet);// HIT the Get url
-//		int responseStatus = httpResponse.getStatusLine().getStatusCode();
-//		System.out.println("Response status--->" + responseStatus);
-
-	
-         
+		CloseableHttpResponse httpResponse = httpClient.execute(httpGet);// HIT the Get url       
 		return httpResponse;
+	}
+	
+	
+	// GET Method with headers
+	public CloseableHttpResponse get(String url,HashMap<String,String> headerMap) throws ClientProtocolException, IOException {
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpGet httpGet = new HttpGet(url);// http Get Request
 		
-		//Status code
-//		int responseStatus = httpResponse.getStatusLine().getStatusCode();
-//		System.out.println("Response status--->" + responseStatus);
 		
-		// Json String
-		//String responseString = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");// String reponse
-		// Converting to JSON
-//		JSONObject responseJson = new JSONObject(responseString);
-//		System.out.println("reposnse JSON from API--->/n" + responseJson);
-//
-//		// All Header
-//		Header[] headerArray = httpResponse.getAllHeaders();
-//
-//		HashMap<String, String> allHeaders = new HashMap<String, String>();
-//
-//		for (Header header : headerArray) {
-//			allHeaders.put(header.getName(), header.getValue());
-//
-//		}
-//
-//		System.out.println("Headers  array---> " + allHeaders);
-
+		//Adding the headers
+		for(Map.Entry<String, String> entry:headerMap.entrySet()) {
+			httpGet.addHeader(entry.getKey(), entry.getValue() );
+		}
+		
+		CloseableHttpResponse httpResponse = httpClient.execute(httpGet);// HIT the Get url       
+		return httpResponse;
 	}
 
 }
