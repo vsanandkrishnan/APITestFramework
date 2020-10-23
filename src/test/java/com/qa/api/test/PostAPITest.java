@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
+
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.api.client.RestClient;
@@ -40,7 +40,7 @@ public class PostAPITest extends TestBase {
 	}
 
 	@Test
-	public void postAPITest() throws JsonGenerationException, JsonMappingException, IOException {
+	public void postAPITest() throws  JsonMappingException, IOException {
 		restClient = new RestClient();
 
 		HashMap<String, String> headerMap = new HashMap<>();
@@ -51,7 +51,7 @@ public class PostAPITest extends TestBase {
 		users = new Users("Anandkrishnan", "Manager");
 		mapper.writeValue(new File("src//main//java//com//qa//api//data//users.json"),users);
 		
-		//Mapper to JSON string
+		//Mapper to JSON string//Martialing
 		String jsonString=mapper.writeValueAsString(users);
 		//System.out.println(jsonString);
 		
@@ -74,10 +74,14 @@ public class PostAPITest extends TestBase {
 		
 		//Validating JSON
 		Users usersResponse=mapper.readValue(jsonOutput, Users.class);
-//		System.out.println(usersResponse);
+		System.out.println(usersResponse);
 		
 		
-		//System.out.println(users.getName().equals(usersResponse.getName()));
+		boolean nameCheck =users.getName().equals(usersResponse.getName());
+		boolean jobCheck= users.getJob().equals(usersResponse.getJob());
+		
+		Assert.assertTrue(nameCheck);
+		Assert.assertTrue(jobCheck);
 		
 		
 

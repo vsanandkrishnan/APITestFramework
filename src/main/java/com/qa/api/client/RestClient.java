@@ -50,5 +50,8 @@ public class RestClient {
 		CloseableHttpResponse closeableHttpResponse = httpClient.execute(httpPost);
 		return closeableHttpResponse;
 	}
+	
+	//POST Call using file
+	
 
 }
