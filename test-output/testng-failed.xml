@@ -3,12 +3,12 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.qa.api.test.GetApiTest">
+      <class name="com.qa.api.test.PostAPITest">
         <methods>
-          <include name="getAPITest"/>
+          <include name="postAPITest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.qa.api.test.GetApiTest -->
+      </class> <!-- com.qa.api.test.PostAPITest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

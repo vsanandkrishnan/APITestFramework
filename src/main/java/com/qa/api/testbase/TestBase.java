@@ -17,6 +17,7 @@ public class TestBase {
 	public Properties prop;
 	
 	public static int RESPONSE_CODE_200=200;
+	public static int RESPONSE_CODE_201=201;
 
 	public TestBase() {
 		try {
