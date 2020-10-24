@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qa.api.test.PostAPITest">
         <methods>
-          <include name="postAPITest"/>
+          <include name="newPOSTtest"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.qa.api.test.PostAPITest -->

@@ -1,6 +1,7 @@
 package com.qa.api.client;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+
+import com.qa.api.util.JsonUtils;
 
 public class RestClient {
 
@@ -50,8 +53,19 @@ public class RestClient {
 		CloseableHttpResponse closeableHttpResponse = httpClient.execute(httpPost);
 		return closeableHttpResponse;
 	}
-	
-	//POST Call using file
-	
+
+	// POST Call using file
+	public CloseableHttpResponse filePost(String url, String fileName, HashMap<String, String> headers)
+			throws ClientProtocolException, IOException {
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpPost httpPost = new HttpPost(url);
+		String entityString = JsonUtils.fileReturnasString(fileName);
+		httpPost.setEntity(new StringEntity(entityString));
+		for (Map.Entry<String, String> entry : headers.entrySet()) {
+			httpPost.addHeader(entry.getKey(), entry.getValue());
+		}
+		CloseableHttpResponse closeableHttpResponse = httpClient.execute(httpPost);
+		return closeableHttpResponse;
+	}
 
 }

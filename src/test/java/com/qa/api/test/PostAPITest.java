@@ -12,12 +12,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.api.client.RestClient;
 import com.qa.api.data.Users;
 import com.qa.api.testbase.TestBase;
+import com.qa.api.util.JsonUtils;
 
 public class PostAPITest extends TestBase {
 
@@ -85,6 +85,25 @@ public class PostAPITest extends TestBase {
 		
 		
 
+	}
+	
+	@Test
+	public void newPOSTtest() throws ClientProtocolException, IOException {
+		restClient = new RestClient();
+		HashMap<String, String> headerMap = new HashMap<>();
+		headerMap.put("Content-Type", "application/json");
+		httpResponse=restClient.filePost(URL, "post", headerMap);
+		
+		//status code assertion
+		int statusCode= JsonUtils.responseStatusCode(httpResponse);
+		System.out.println("The Status code  \n"+ statusCode);
+		JsonUtils.assertPOSTStatusCode(205);
+        
+		
+		//getting the response
+		String jsonResponse = JsonUtils.responseString(httpResponse);
+		System.out.println("The json output \n"+jsonResponse);
+		
 	}
 
 }

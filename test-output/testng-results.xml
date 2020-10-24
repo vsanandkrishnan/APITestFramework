@@ -1,20 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-23T07:32:41Z" name="Default suite" finished-at="2020-10-23T07:32:46Z" duration-ms="4239">
+  <suite started-at="2020-10-24T10:12:18Z" name="Default suite" finished-at="2020-10-24T10:12:19Z" duration-ms="1012">
     <groups>
     </groups>
-    <test started-at="2020-10-23T07:32:41Z" name="Default test" finished-at="2020-10-23T07:32:46Z" duration-ms="4239">
+    <test started-at="2020-10-24T10:12:18Z" name="Default test" finished-at="2020-10-24T10:12:19Z" duration-ms="1012">
       <class name="com.qa.api.test.PostAPITest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PostAPITest@2ca26d77]" started-at="2020-10-23T00:32:41Z" name="setUp" finished-at="2020-10-23T00:32:41Z" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PostAPITest@7de62196]" started-at="2020-10-24T03:12:18Z" name="setUp" finished-at="2020-10-24T03:12:18Z" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="postAPITest()[pri:0, instance:com.qa.api.test.PostAPITest@2ca26d77]" started-at="2020-10-23T00:32:41Z" name="postAPITest" finished-at="2020-10-23T00:32:46Z" duration-ms="4213" status="PASS">
+        <test-method signature="newPOSTtest()[pri:0, instance:com.qa.api.test.PostAPITest@7de62196]" started-at="2020-10-24T03:12:18Z" name="newPOSTtest" finished-at="2020-10-24T03:12:19Z" duration-ms="988" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Status code does not match  expected [201] but found [205]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Status code does not match  expected [201] but found [205]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:370)
+	at com.qa.api.util.JsonUtils.assertPOSTStatusCode(JsonUtils.java:52)
+	at com.qa.api.test.PostAPITest.newPOSTtest(PostAPITest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postAPITest -->
+        </test-method> <!-- newPOSTtest -->
       </class> <!-- com.qa.api.test.PostAPITest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
