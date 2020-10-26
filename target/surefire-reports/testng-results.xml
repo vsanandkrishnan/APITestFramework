@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="3" passed="3" failed="0" skipped="0">
+<testng-results total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-23T08:37:00Z" name="Command line suite" finished-at="2020-10-23T08:37:06Z" duration-ms="5655">
+  <suite started-at="2020-10-26T02:19:37Z" name="Command line suite" finished-at="2020-10-26T02:19:41Z" duration-ms="3972">
     <groups>
     </groups>
-    <test started-at="2020-10-23T08:37:00Z" name="Command line test" finished-at="2020-10-23T08:37:06Z" duration-ms="5655">
+    <test started-at="2020-10-26T02:19:37Z" name="Command line test" finished-at="2020-10-26T02:19:41Z" duration-ms="3972">
       <class name="com.qa.api.test.GetApiTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.GetApiTest@45018215]" started-at="2020-10-23T01:37:05Z" name="setUp" finished-at="2020-10-23T01:37:05Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.GetApiTest@45b9a632]" started-at="2020-10-25T19:19:39Z" name="setUp" finished-at="2020-10-25T19:19:39Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="getAPITestWithoutHeaders()[pri:0, instance:com.qa.api.test.GetApiTest@45018215]" started-at="2020-10-23T01:37:05Z" name="getAPITestWithoutHeaders" finished-at="2020-10-23T01:37:06Z" duration-ms="583" status="PASS">
+        <test-method signature="getAPITestWithoutHeaders()[pri:0, instance:com.qa.api.test.GetApiTest@45b9a632]" started-at="2020-10-25T19:19:39Z" name="getAPITestWithoutHeaders" finished-at="2020-10-25T19:19:40Z" duration-ms="729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAPITestWithoutHeaders -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.GetApiTest@45018215]" started-at="2020-10-23T01:37:06Z" name="setUp" finished-at="2020-10-23T01:37:06Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.GetApiTest@45b9a632]" started-at="2020-10-25T19:19:40Z" name="setUp" finished-at="2020-10-25T19:19:40Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="getAPITestWithHeaders()[pri:0, instance:com.qa.api.test.GetApiTest@45018215]" started-at="2020-10-23T01:37:06Z" name="getAPITestWithHeaders" finished-at="2020-10-23T01:37:06Z" duration-ms="306" status="PASS">
+        <test-method signature="getAPITestWithHeaders()[pri:0, instance:com.qa.api.test.GetApiTest@45b9a632]" started-at="2020-10-25T19:19:40Z" name="getAPITestWithHeaders" finished-at="2020-10-25T19:19:41Z" duration-ms="649" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAPITestWithHeaders -->
       </class> <!-- com.qa.api.test.GetApiTest -->
       <class name="com.qa.api.test.PostAPITest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PostAPITest@56a6d5a6]" started-at="2020-10-23T01:37:00Z" name="setUp" finished-at="2020-10-23T01:37:00Z" duration-ms="18" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PostAPITest@25d250c6]" started-at="2020-10-25T19:19:37Z" name="setUp" finished-at="2020-10-25T19:19:37Z" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="postAPITest()[pri:0, instance:com.qa.api.test.PostAPITest@56a6d5a6]" started-at="2020-10-23T01:37:00Z" name="postAPITest" finished-at="2020-10-23T01:37:05Z" duration-ms="4725" status="PASS">
+        <test-method signature="newPOSTtest()[pri:0, instance:com.qa.api.test.PostAPITest@25d250c6]" started-at="2020-10-25T19:19:37Z" name="newPOSTtest" finished-at="2020-10-25T19:19:38Z" duration-ms="1514" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newPOSTtest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PostAPITest@25d250c6]" started-at="2020-10-25T19:19:38Z" name="setUp" finished-at="2020-10-25T19:19:38Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="postAPITest()[pri:0, instance:com.qa.api.test.PostAPITest@25d250c6]" started-at="2020-10-25T19:19:38Z" name="postAPITest" finished-at="2020-10-25T19:19:39Z" duration-ms="1040" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postAPITest -->
       </class> <!-- com.qa.api.test.PostAPITest -->
+      <class name="com.qa.api.test.PutApiTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PutApiTest@30b7c004]" started-at="2020-10-25T19:19:39Z" name="setUp" finished-at="2020-10-25T19:19:39Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="putTest()[pri:0, instance:com.qa.api.test.PutApiTest@30b7c004]" started-at="2020-10-25T19:19:39Z" name="putTest" finished-at="2020-10-25T19:19:39Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- putTest -->
+      </class> <!-- com.qa.api.test.PutApiTest -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

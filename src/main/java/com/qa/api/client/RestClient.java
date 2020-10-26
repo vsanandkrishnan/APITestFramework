@@ -1,7 +1,6 @@
 package com.qa.api.client;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +8,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -66,6 +66,23 @@ public class RestClient {
 		}
 		CloseableHttpResponse closeableHttpResponse = httpClient.execute(httpPost);
 		return closeableHttpResponse;
+	}
+
+	// PUT Call Using Normal Entity String
+	public CloseableHttpResponse put(String url, String entityString, HashMap<String, String> headers)
+			throws ClientProtocolException, IOException {
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpPut httpPut = new HttpPut(url);
+		httpPut.setEntity(new StringEntity(entityString));
+
+		for (Map.Entry<String, String> mapHeader : headers.entrySet()) {
+			httpPut.addHeader(mapHeader.getKey(), mapHeader.getValue());
+
+		}
+		
+		CloseableHttpResponse  closeableHttpResponse= httpClient.execute(httpPut);
+		return closeableHttpResponse;
+
 	}
 
 }
