@@ -96,8 +96,9 @@ public class PostAPITest extends TestBase {
 		
 		//status code assertion
 		int statusCode= JsonUtils.responseStatusCode(httpResponse);
-		System.out.println("The Status code  \n"+ statusCode);
+		System.out.println("The Status code  \t"+ statusCode);
 		JsonUtils.assertPOSTStatusCode(statusCode);
+		
         
 //		String json= EntityUtils.toString(httpResponse.getEntity(),"UTF-8");
 //		JSONObject jsonObject = new JSONObject(json);
@@ -107,7 +108,7 @@ public class PostAPITest extends TestBase {
 		System.out.println("The json output \n"+jsonResponse);
 		
 		//Writing to an outputFile
-	//	JsonUtils.copyResponsetoFile(httpResponse, "NewPOST");
+	    JsonUtils.copyResponsetoFile(jsonResponse, "NewPOST");
 		
 	}
 

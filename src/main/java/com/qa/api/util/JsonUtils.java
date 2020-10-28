@@ -17,9 +17,9 @@ public class JsonUtils {
 
 	public static JSONObject responsejson;
 	public static String JSON_REQUEST_PATH = "apirequest//";
-	public static final int STATUS_CODE_POST=201;
-	public static final int STATUS_CODE_OUTPUT_WITHOUT_ERROR=200;
-	public static String JSON_RESPONSE_PATH="response//";
+	public static final int STATUS_CODE_POST = 201;
+	public static final int STATUS_CODE_OUTPUT_WITHOUT_ERROR = 200;
+	public static String JSON_RESPONSE_PATH = "response//";
 	public static File fJSON;
 
 	public static String getValueByJPath(JSONObject responsejson, String jpath) {
@@ -52,28 +52,31 @@ public class JsonUtils {
 		String formattedOutput = responsejson.toString(4);
 		return formattedOutput;
 	}
-	
-	public static void copyResponsetoFile(CloseableHttpResponse response,String responseFileName) throws ParseException, IOException {
+
+	public static void copyResponsetoFile(String response, String responseFileName)
+			throws ParseException, IOException {
 //		String reposnetobecopied=responseString(response);
-		String pathname = JSON_RESPONSE_PATH+responseFileName+"Response.json";
-		System.out.println(pathname);
-		FileWriter fRESPONSE = new FileWriter(pathname);
-		
-		String json= EntityUtils.toString(response.getEntity(),"UTF-8");
-		JSONObject jsonObject = new JSONObject(json);
-		
-		BufferedWriter bufResponse = new BufferedWriter(fRESPONSE);
-		
-		bufResponse.write(jsonObject.toString());	
+		String pathname = JSON_RESPONSE_PATH + responseFileName + "Response.txt";
+
+
+
+		FileWriter writer = new FileWriter(pathname);
+		writer.write(response.trim());
+		writer.flush();
+		writer.close();
+
 	}
-	
+
 	public static void assertPOSTStatusCode(int statusCodeForPost) {
-		Assert.assertEquals(statusCodeForPost, STATUS_CODE_POST,"Status code does not match " );	
+		Assert.assertEquals(statusCodeForPost, STATUS_CODE_POST, "Status code does not match ");
 	}
 	
-	
+	public static void assertNormalStatusCode(int statusCode) {
+		Assert.assertEquals(statusCode, STATUS_CODE_OUTPUT_WITHOUT_ERROR,"Status code does not match ");
+	}
+
 	public static void compareResponse(CloseableHttpResponse reponse) {
-		//Code to be written for this;
+		// Code to be written for this;
 	}
 
 }

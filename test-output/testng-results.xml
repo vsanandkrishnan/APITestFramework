@@ -2,20 +2,20 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-26T02:18:30Z" name="Default suite" finished-at="2020-10-26T02:18:32Z" duration-ms="1591">
+  <suite started-at="2020-10-28T06:49:24Z" name="Default suite" finished-at="2020-10-28T06:49:26Z" duration-ms="1599">
     <groups>
     </groups>
-    <test started-at="2020-10-26T02:18:30Z" name="Default test" finished-at="2020-10-26T02:18:32Z" duration-ms="1591">
-      <class name="com.qa.api.test.PostAPITest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PostAPITest@7de62196]" started-at="2020-10-25T19:18:30Z" name="setUp" finished-at="2020-10-25T19:18:30Z" duration-ms="9" status="PASS">
+    <test started-at="2020-10-28T06:49:24Z" name="Default test" finished-at="2020-10-28T06:49:26Z" duration-ms="1599">
+      <class name="com.qa.api.test.PutApiTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.api.test.PutApiTest@81d9a72]" started-at="2020-10-27T23:49:24Z" name="setUp" finished-at="2020-10-27T23:49:24Z" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="newPOSTtest()[pri:0, instance:com.qa.api.test.PostAPITest@7de62196]" started-at="2020-10-25T19:18:30Z" name="newPOSTtest" finished-at="2020-10-25T19:18:32Z" duration-ms="1568" status="PASS">
+        <test-method signature="putTest()[pri:0, instance:com.qa.api.test.PutApiTest@81d9a72]" started-at="2020-10-27T23:49:24Z" name="putTest" finished-at="2020-10-27T23:49:26Z" duration-ms="1568" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newPOSTtest -->
-      </class> <!-- com.qa.api.test.PostAPITest -->
+        </test-method> <!-- putTest -->
+      </class> <!-- com.qa.api.test.PutApiTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

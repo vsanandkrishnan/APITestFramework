@@ -84,5 +84,23 @@ public class RestClient {
 		return closeableHttpResponse;
 
 	}
+	
+	
+	public CloseableHttpResponse filePut(String url,String fileName, HashMap<String, String> headers)
+			throws ClientProtocolException, IOException {
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpPut httpPut = new HttpPut(url);
+		String entityString=JsonUtils.fileReturnasString(fileName);
+		httpPut.setEntity(new StringEntity(entityString));
+
+		for (Map.Entry<String, String> mapHeader : headers.entrySet()) {
+			httpPut.addHeader(mapHeader.getKey(), mapHeader.getValue());
+
+		}
+		
+		CloseableHttpResponse  closeableHttpResponse= httpClient.execute(httpPut);
+		return closeableHttpResponse;
+
+	}
 
 }
