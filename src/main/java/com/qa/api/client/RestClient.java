@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -85,7 +86,7 @@ public class RestClient {
 
 	}
 	
-	
+	//PUT calling done using file
 	public CloseableHttpResponse filePut(String url,String fileName, HashMap<String, String> headers)
 			throws ClientProtocolException, IOException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -101,6 +102,16 @@ public class RestClient {
 		CloseableHttpResponse  closeableHttpResponse= httpClient.execute(httpPut);
 		return closeableHttpResponse;
 
+	}
+	
+	
+	//DELETE Test done without using header file
+	public CloseableHttpResponse delete(String url) throws ClientProtocolException, IOException {
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpDelete httpDelete = new HttpDelete(url);
+		CloseableHttpResponse httpResponse=httpClient.execute(httpDelete);
+		return httpResponse;		
+		
 	}
 
 }
